@@ -9,6 +9,7 @@ import { user } from '../_models/user';
 })
 export class AccountService {
   baseUrl = 'https://localhost:5001/api/';
+  // reason for ReplaySubject is so that any class that wants it will subscribe to it and any changes it will be notified
   private currentUserSource = new ReplaySubject<user>(1);
   currentUser$ = this.currentUserSource.asObservable();
 
@@ -23,7 +24,7 @@ export class AccountService {
             localStorage.setItem("user", JSON.stringify(user));
             this.currentUserSource.next(user);
           }
-         
+
        })
      );
   }
