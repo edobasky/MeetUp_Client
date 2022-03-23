@@ -1,4 +1,4 @@
-# MeetUp_Client {frontend aapplication}
+# MeetUp_Client {frontend application}
 Technologies used for this :
 Html
 Css
